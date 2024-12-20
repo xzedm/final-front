@@ -4,7 +4,7 @@ import SummaryApi from '../common/SummaryApi'
 import Axios from '../utils/Axios'
 import AxiosToastError from '../utils/AxiosToastError'
 import { FaAngleRight,FaAngleLeft } from "react-icons/fa6";
-import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees'
+import { DisplayPriceInTenge } from '../utils/DisplayPriceInTenge'
 import Divider from '../components/Divider'
 import image1 from '../assets/minute_delivery.png'
 import image2 from '../assets/Best_Prices_Offers.png'
@@ -107,10 +107,10 @@ const ProductDisplayPage = () => {
                     <p className='font-semibold'>Description</p>
                     <p className='text-base'>{data.description}</p>
                 </div>
-                <div>
+                {/* <div>
                     <p className='font-semibold'>Unit</p>
                     <p className='text-base'>{data.unit}</p>
-                </div>
+                </div> */}
                 {
                   data?.more_details && Object.keys(data?.more_details).map((element,index)=>{
                     return(
@@ -133,11 +133,11 @@ const ProductDisplayPage = () => {
               <p className=''>Price</p> 
               <div className='flex items-center gap-2 lg:gap-4'>
                 <div className='border border-green-600 px-4 py-2 rounded bg-green-50 w-fit'>
-                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInRupees(pricewithDiscount(data.price,data.discount))}</p>
+                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInTenge(pricewithDiscount(data.price,data.discount))}</p>
                 </div>
                 {
                   data.discount && (
-                    <p className='line-through'>{DisplayPriceInRupees(data.price)}</p>
+                    <p className='line-through'>{DisplayPriceInTenge(data.price)}</p>
                   )
                 }
                 {
@@ -163,7 +163,7 @@ const ProductDisplayPage = () => {
               }
            
 
-            <h2 className='font-semibold'>Why shop from TECHLand </h2>
+            <h2 className='font-semibold my-20'>Why shop from TECHLAND </h2>
             <div>
                   <div className='flex  items-center gap-4 my-4'>
                       <img
@@ -173,7 +173,7 @@ const ProductDisplayPage = () => {
                       />
                       <div className='text-sm'>
                         <div className='font-semibold'>Superfast Delivery</div>
-                        <p>Get your orer delivered to your doorstep at the earliest from dark stores near you.</p>
+                        <p>Get your orer delivered to your doorstep at the nearliest from dark stores near you.</p>
                       </div>
                   </div>
                   <div className='flex  items-center gap-4 my-4'>
@@ -184,7 +184,7 @@ const ProductDisplayPage = () => {
                       />
                       <div className='text-sm'>
                         <div className='font-semibold'>Best Prices & Offers</div>
-                        <p>Best price destination with offers directly from the nanufacturers.</p>
+                        <p>Best price destination with offers directly from the manufacturers.</p>
                       </div>
                   </div>
                   {/* <div className='flex  items-center gap-4 my-4'>
@@ -207,8 +207,8 @@ const ProductDisplayPage = () => {
                     <p className='text-base'>{data.description}</p>
                 </div> */}
                 <div>
-                    <p className='font-semibold'>Unit</p>
-                    <p className='text-base'>{data.unit}</p>
+                    {/* <p className='font-semibold'>Unit</p>
+                    <p className='text-base'>{data.unit}</p> */}
                 </div>
                 {
                   data?.more_details && Object.keys(data?.more_details).map((element,index)=>{
