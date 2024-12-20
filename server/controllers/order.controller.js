@@ -33,7 +33,7 @@ import mongoose from "mongoose";
         const updateInUser = await UserModel.updateOne({ _id : userId }, { shopping_cart : []})
 
         return response.json({
-            message : "Order successfully",
+            message : "Order completed successfully",
             error : false,
             success : true,
             data : generatedOrder
@@ -64,7 +64,7 @@ export async function paymentController(request,response){
         const line_items  = list_items.map(item =>{
             return{
                price_data : {
-                    currency : 'inr',
+                    currency : 'kzt',
                     product_data : {
                         name : item.productId.name,
                         images : item.productId.image,
@@ -72,7 +72,7 @@ export async function paymentController(request,response){
                             productId : item.productId._id
                         }
                     },
-                    unit_amount : pricewithDiscount(item.productId.price,item.productId.discount) * 100   
+                    unit_amount : pricewithDiscount(item.productId.price,item.productId.discount) * 10   
                },
                adjustable_quantity : {
                     enabled : true,
